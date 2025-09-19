@@ -2,13 +2,13 @@ import Header from "../Layout/Header";
 
 export default function HomeBeg() {
   return (
-    <div className="bg-violet-600 w-full h-screen">
+    <div className="w-full h-screen px-10 bg-amber-900">
       <div className="flex relative flex-col ">
         <Header />
         <span className="text-9xl font-bold text-amber-500">Erxes</span>
         <span className="text-9xl text-gray-700 mt-4">Academy</span>
       </div>
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center ">
         <div className="flex justify-between flex-col ">
           <div>
             <p>
