@@ -1,6 +1,6 @@
 import Header from "../Layout/Header";
 
-export default function HomeBeg() {
+export default function ErxesNuurHuudas() {
   return (
     <div className="w-full h-screen px-10 bg-amber-900">
       <div className="flex relative flex-col ">

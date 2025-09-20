@@ -23,7 +23,7 @@ const wordsData = [
   "ур",
   "чадвартай",
   "боловсон",
-  "үчингүй",
+  "xүчин",
   "бэлтгэх",
   "зорилгынхоо",
   "хүрээнд",
@@ -40,9 +40,12 @@ const wordsData = [
   "байна.",
 ];
 
-export const Explain = () => {
+export const TextAnimation = () => {
   return (
     <div className="relative flex justify-center items-start h-[2000px] w-full px-4">
+      <div>
+        <p>jijig taniltsuulga</p>
+      </div>
       <div className="sticky top-[190px] md:top-[310px] flex justify-center w-full">
         <div className="flex flex-wrap justify-center max-w-[980px]">
           {wordsData.map((word, index) => (
@@ -62,14 +65,16 @@ interface AnimatedWordProps {
 const AnimatedWord = ({ word, delay }: AnimatedWordProps) => {
   const ref = useRef<HTMLSpanElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [hasBeenVisible, setHasBeenVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => setIsVisible(true), delay);
-        } else {
-          setTimeout(() => setIsVisible(false), 0);
+        if (entry.isIntersecting && !hasBeenVisible) {
+          setTimeout(() => {
+            setIsVisible(true);
+            setHasBeenVisible(true);
+          }, delay);
         }
       },
       { threshold: 0.1 }
@@ -78,7 +83,7 @@ const AnimatedWord = ({ word, delay }: AnimatedWordProps) => {
     if (ref.current) observer.observe(ref.current);
 
     return () => observer.disconnect();
-  }, [delay]);
+  }, [delay, hasBeenVisible]);
 
   return (
     <span

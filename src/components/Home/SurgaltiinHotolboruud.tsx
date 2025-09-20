@@ -212,7 +212,10 @@ export default function SurgaltHotolbor() {
   const currentList = lists[surgalt];
 
   return (
-    <div className="flex justify-center bg-white min-h-screen items-center text-gray-900">
+    <div className="flex justify-center flex-col bg-white min-h-screen items-center text-gray-900">
+      <div>
+        <p>surgaltiin HOtolboruud</p>
+      </div>
       <div className="max-w-6xl p-6">
         {/* Header / tabs */}
         <nav className="flex flex-wrap gap-3 justify-center mb-8">
