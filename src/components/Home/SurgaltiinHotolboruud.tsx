@@ -14,22 +14,18 @@ const SevenGridComponent = () => {
   const grid7Text = "Зургадугаар";
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-purple-100 to-purple-200 p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-grey-900">
       <div className="w-full max-w-6xl">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-          7 Элементийн Систем
-        </h2>
-
         <div className="flex gap-2 mb-8 w-full justify-center">
-          {/* Grid 1 - Active */}
+          {/* Grid 1 */}
           <div
             className={`
-              h-screen rounded-2xl cursor-pointer transition-all duration-300 ease-out relative flex-shrink-0
+              h-auto rounded-2xl cursor-pointer transition-all duration-300 ease-out relative flex-shrink-0
               ${
                 focusedIndex === 1
-                  ? "bg-black w-40 shadow-xl z-10"
+                  ? "bg-black w-60 shadow-xl z-10"
                   : focusedIndex !== null
-                  ? "bg-gray-300 w-12 opacity-40"
+                  ? "bg-gray-300 w-20 opacity-40"
                   : "bg-black w-20"
               }
             `}
@@ -37,13 +33,6 @@ const SevenGridComponent = () => {
             tabIndex={0}
             role="button"
             aria-pressed={focusedIndex === 1}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                setFocusedIndex(focusedIndex === 1 ? null : 1);
-              }
-              if (e.key === "Escape") setFocusedIndex(null);
-            }}
           >
             {focusedIndex === 1 && (
               <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-max">
@@ -72,13 +61,6 @@ const SevenGridComponent = () => {
             tabIndex={0}
             role="button"
             aria-pressed={focusedIndex === 2}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                setFocusedIndex(focusedIndex === 2 ? null : 2);
-              }
-              if (e.key === "Escape") setFocusedIndex(null);
-            }}
           >
             {focusedIndex === 2 && (
               <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-max">
@@ -107,13 +89,6 @@ const SevenGridComponent = () => {
             tabIndex={0}
             role="button"
             aria-pressed={focusedIndex === 3}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                setFocusedIndex(focusedIndex === 3 ? null : 3);
-              }
-              if (e.key === "Escape") setFocusedIndex(null);
-            }}
           >
             {focusedIndex === 3 && (
               <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-max">
@@ -142,13 +117,6 @@ const SevenGridComponent = () => {
             tabIndex={0}
             role="button"
             aria-pressed={focusedIndex === 4}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                setFocusedIndex(focusedIndex === 4 ? null : 4);
-              }
-              if (e.key === "Escape") setFocusedIndex(null);
-            }}
           >
             {focusedIndex === 4 && (
               <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-max">
@@ -177,13 +145,6 @@ const SevenGridComponent = () => {
             tabIndex={0}
             role="button"
             aria-pressed={focusedIndex === 5}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                setFocusedIndex(focusedIndex === 5 ? null : 5);
-              }
-              if (e.key === "Escape") setFocusedIndex(null);
-            }}
           >
             {focusedIndex === 5 && (
               <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-max">
@@ -212,13 +173,6 @@ const SevenGridComponent = () => {
             tabIndex={0}
             role="button"
             aria-pressed={focusedIndex === 6}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                setFocusedIndex(focusedIndex === 6 ? null : 6);
-              }
-              if (e.key === "Escape") setFocusedIndex(null);
-            }}
           >
             {focusedIndex === 6 && (
               <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-max">
@@ -247,13 +201,6 @@ const SevenGridComponent = () => {
             tabIndex={0}
             role="button"
             aria-pressed={focusedIndex === 7}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                setFocusedIndex(focusedIndex === 7 ? null : 7);
-              }
-              if (e.key === "Escape") setFocusedIndex(null);
-            }}
           >
             {focusedIndex === 7 && (
               <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-max">
@@ -272,9 +219,7 @@ const SevenGridComponent = () => {
 
         {/* Click interaction */}
         <div className="mt-6">
-          <p className="text-sm text-gray-600 text-center">
-            Элементүүдийг дарж фокус хийж текст харах боломжтой
-          </p>
+          <p className="text-sm text-gray-600 text-center"></p>
         </div>
       </div>
 
