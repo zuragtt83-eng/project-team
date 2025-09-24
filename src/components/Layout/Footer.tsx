@@ -126,48 +126,54 @@ export default function Footer() {
 
         <div className="flex flex-1 flex-col md:flex-row justify-between gap-12">
           {/* Дугаар */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col items-center md:items-start gap-4">
             <h3 className="text-xl font-semibold text-[#5629B6] flex items-center gap-2">
-              <Phone size={20} /> Дугаар
+              <Home size={20} /> Дугаар
             </h3>
-            <p className="hover:text-[#6569DF] transition cursor-pointer">
-              +976 8500-3673
-            </p>
-            <p className="hover:text-[#6569DF] transition cursor-pointer">
-              +976 8090-6405
-            </p>
-            <p className="flex items-center gap-2 hover:text-[#6569DF] transition cursor-pointer">
-              <Mail size={16} /> Academy@erxes.io
-            </p>
-          </div>
 
-          <div className="flex flex-col gap-4 md:items-start">
-            <h3 className="text-xl font-semibold text-[#5629B6] flex items-center gap-2">
-              <Home size={20} /> Main Links
-            </h3>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 w-full md:w-auto">
               <a
-                href="#"
-                className="hover:text-[#6569DF] transition relative group"
+                href="tel:+97685003673"
+                className="flex flex-row gap-2 justify-center md:justify-start items-center hover:text-[#6569DF] transition relative group"
               >
-                Home
+                <Phone size={16} />
+                976 8500-3673
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 group-hover:w-full transition-all duration-300"></span>
               </a>
+
               <a
-                href="#"
-                className="hover:text-[#6569DF] transition relative group"
+                href="tel:+97680906405"
+                className="flex flex-row gap-2 justify-center md:justify-start items-center hover:text-[#6569DF] transition relative group"
               >
-                About Us
+                <Phone size={16} />
+                976 8090-6405
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 group-hover:w-full transition-all duration-300"></span>
               </a>
+
               <a
-                href="#"
-                className="hover:text-[#6569DF] transition relative group"
+                href="mailto:Academy@erxes.io"
+                className="flex flex-row gap-2 justify-center md:justify-start items-center hover:text-[#6569DF] transition relative group"
               >
-                Projects
+                <Mail size={16} />
+                Academy@erxes.io
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 group-hover:w-full transition-all duration-300"></span>
               </a>
             </div>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <h3 className="text-xl font-semibold text-[#5629B6] flex items-center gap-2">
+              Main Links
+            </h3>
+            <p className="hover:text-[#6569DF] transition cursor-pointer">
+              Home
+            </p>
+            <p className="hover:text-[#6569DF] transition cursor-pointer">
+              About Us
+            </p>
+            <p className="flex items-center gap-2 hover:text-[#6569DF] transition cursor-pointer">
+              Projects
+            </p>
           </div>
         </div>
       </div>

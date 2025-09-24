@@ -1,5 +1,11 @@
 "use client";
+import { Yrsa } from "next/font/google";
+
 import { useEffect, useRef, useState } from "react";
+const yrsa = Yrsa({
+  subsets: ["latin"], // choose the subset you need
+  weight: ["300", "700"], // normal and bold
+});
 
 const wordsData = [
   "Цахиурын",
@@ -43,9 +49,6 @@ const wordsData = [
 export const TextAnimation = () => {
   return (
     <div className="relative flex justify-center items-start h-[2000px] w-full px-4">
-      <div>
-        <p>jijig taniltsuulga</p>
-      </div>
       <div className="sticky top-[190px] md:top-[310px] flex justify-center w-full">
         <div className="flex flex-wrap justify-center max-w-[980px]">
           {wordsData.map((word, index) => (
@@ -92,7 +95,7 @@ const AnimatedWord = ({ word, delay }: AnimatedWordProps) => {
         isVisible
           ? "opacity-100 translate-y-0 blur-0"
           : "opacity-0 translate-y-5 blur-sm"
-      } text-sm md:text-[1.875rem] lg:text-5xl text-center`}
+      } text-sm md:text-[1.875rem] lg:text-5xl text-center ${yrsa.className}`}
     >
       {word}
     </span>

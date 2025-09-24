@@ -1,3 +1,4 @@
+import OrchingiinZurag from "@/components/Home/AcademyOrchin";
 import ErxesNuurHuudas from "@/components/Home/Erxes-NuurHuudas";
 
 import SurgaltHotolbor from "@/components/Home/SurgaltiinHotolboruud";
@@ -9,6 +10,7 @@ export default function Erxes() {
       <ErxesNuurHuudas />
       <TextAnimation />
       <SurgaltHotolbor />
+      <OrchingiinZurag />
     </div>
   );
 }
