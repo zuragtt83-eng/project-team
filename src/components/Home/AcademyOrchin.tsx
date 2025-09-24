@@ -15,16 +15,24 @@ export default function OrchingiinZurag() {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "end start"],
+    offset: ["start start", "end end"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["35px", "0px"]);
-  const scale = useTransform(scrollYProgress, [0, 1], [0.96, 1]);
+  // Zoom effect for grid during first half of scroll
+  const gridScale = useTransform(scrollYProgress, [0, 0.5], [1, 1.5]);
+  const gridY = useTransform(scrollYProgress, [0, 0.5], ["0px", "-50px"]);
+
+  // Slide move effect during second half of scroll
+  const slideY = useTransform(scrollYProgress, [0.2, 1], ["100%", "0%"]);
 
   return (
     <div ref={containerRef} className="relative h-[200vh] bg-gray-900">
-      <section className="sticky w-full top-0 h-screen flex items-center justify-center">
-        <div className="relative h-screen w-full bg-black text-white text-5xl font-bold flex items-center justify-center overflow-hidden">
+      {/* Grid Section */}
+      <section className="sticky top-0 h-screen flex items-center justify-center">
+        <motion.div
+          style={{ y: gridY, scale: gridScale }}
+          className="relative h-screen w-full bg-black text-white text-5xl font-bold flex items-center justify-center overflow-hidden"
+        >
           <div className="grid grid-cols-3 grid-rows-3 gap-1 w-full h-full p-4">
             <Image
               className="rounded-3xl w-full h-full object-cover"
@@ -33,12 +41,12 @@ export default function OrchingiinZurag() {
             />
             <Image
               className="rounded-3xl w-full h-full object-cover"
-              src={erxesZurag}
+              src={SurgaltiinOroo2}
               alt="erxes zurag"
             />
             <Image
               className="rounded-3xl w-full h-full object-cover"
-              src={erxesZurag}
+              src={GalTogooTennisZurga}
               alt="erxes zurag"
             />
 
@@ -70,17 +78,18 @@ export default function OrchingiinZurag() {
             />
             <Image
               className="rounded-3xl w-full h-full object-cover"
-              src={erxesZurag}
+              src={podRoomZurag}
               alt="erxes zurag"
             />
           </div>
-        </div>
+        </motion.div>
       </section>
 
-      <section className="sticky top-0 h-screen flex items-center justify-center">
+      {/* Slide Section */}
+      <section className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
         <motion.div
-          style={{ y, scale }}
-          className="relative h-screen w-full  bg-amber-50 text-white text-5xl font-bold flex items-center justify-center"
+          style={{ y: slideY }}
+          className="relative h-screen w-full bg-amber-50 text-white text-5xl font-bold flex items-center justify-center"
         >
           Slide 2
         </motion.div>
