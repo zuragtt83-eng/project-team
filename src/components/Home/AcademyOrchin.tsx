@@ -19,71 +19,73 @@ export default function OrchingiinZurag() {
   });
 
   // Zoom effect for grid during first half of scroll
-  const gridScale = useTransform(scrollYProgress, [0, 0.5], [1, 1.5]);
+  const gridScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.5]);
   const gridY = useTransform(scrollYProgress, [0, 0.5], ["0px", "-50px"]);
 
   // Slide move effect during second half of scroll
-  const slideY = useTransform(scrollYProgress, [0.2, 1], ["100%", "0%"]);
+  const slideY = useTransform(scrollYProgress, [0, 1], ["100%", "0%"]);
 
   return (
     <div ref={containerRef} className="relative h-[200vh] bg-gray-900">
       {/* Grid Section */}
-      <section className="sticky top-0 h-screen flex items-center justify-center">
-        <motion.div
-          style={{ y: gridY, scale: gridScale }}
-          className="relative h-screen w-full bg-black text-white text-5xl font-bold flex items-center justify-center overflow-hidden"
-        >
-          <div className="grid grid-cols-3 grid-rows-3 gap-1 w-full h-full p-4">
-            <Image
-              className="rounded-3xl w-full h-full object-cover"
-              src={workShopRoom4}
-              alt="erxes zurag"
-            />
-            <Image
-              className="rounded-3xl w-full h-full object-cover"
-              src={SurgaltiinOroo2}
-              alt="erxes zurag"
-            />
-            <Image
-              className="rounded-3xl w-full h-full object-cover"
-              src={GalTogooTennisZurga}
-              alt="erxes zurag"
-            />
+      <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden  ">
+        <div className="scale-200 origin-center transition-all duration-500">
+          <motion.div
+            style={{ y: gridY, scale: gridScale }}
+            className="relative h-screen w-full bg-black text-white text-5xl font-bold flex items-center justify-center overflow-hidden"
+          >
+            <div className="grid grid-cols-3 grid-rows-3 gap-3 w-full h-full p-4">
+              <Image
+                className="rounded-3xl w-full h-full object-cover"
+                src={workShopRoom4}
+                alt="erxes zurag"
+              />
+              <Image
+                className="rounded-3xl w-full h-full object-cover"
+                src={SurgaltiinOroo2}
+                alt="erxes zurag"
+              />
+              <Image
+                className="rounded-3xl w-full h-full object-cover"
+                src={GalTogooTennisZurga}
+                alt="erxes zurag"
+              />
 
-            <Image
-              className="rounded-3xl w-full h-full object-cover"
-              src={uudniiZurag}
-              alt="erxes zurag"
-            />
-            <Image
-              className="rounded-3xl w-full h-full object-cover"
-              src={erxesZurag}
-              alt="erxes zurag"
-            />
-            <Image
-              className="rounded-3xl w-full h-full object-cover"
-              src={MongolBichigteiHeseg}
-              alt="erxes zurag"
-            />
+              <Image
+                className="rounded-3xl w-full h-full object-cover"
+                src={uudniiZurag}
+                alt="erxes zurag"
+              />
+              <Image
+                className="rounded-3xl w-full h-full object-cover"
+                src={erxesZurag}
+                alt="erxes zurag"
+              />
+              <Image
+                className="rounded-3xl w-full h-full object-cover"
+                src={MongolBichigteiHeseg}
+                alt="erxes zurag"
+              />
 
-            <Image
-              className="rounded-3xl w-full h-full object-cover"
-              src={erxesZurag}
-              alt="erxes zurag"
-            />
-            <Image
-              className="rounded-3xl w-full h-full object-cover"
-              src={MongolBichigteiHeseg}
-              alt="erxes zurag"
-            />
-            <Image
-              className="rounded-3xl w-full h-full object-cover"
-              src={podRoomZurag}
-              alt="erxes zurag"
-            />
-          </div>
-        </motion.div>
-      </section>
+              <Image
+                className="rounded-3xl w-full h-full object-cover"
+                src={erxesZurag}
+                alt="erxes zurag"
+              />
+              <Image
+                className="rounded-3xl w-full h-full object-cover"
+                src={MongolBichigteiHeseg}
+                alt="erxes zurag"
+              />
+              <Image
+                className="rounded-3xl w-full h-full object-cover"
+                src={podRoomZurag}
+                alt="erxes zurag"
+              />
+            </div>
+          </motion.div>
+        </div>
+      </div>
 
       {/* Slide Section */}
       <section className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
