@@ -1,5 +1,6 @@
 "use client";
 
+import { Check } from "lucide-react";
 import React, { useState } from "react";
 
 const SurgaltHotolbor = () => {
@@ -11,7 +12,7 @@ const SurgaltHotolbor = () => {
   return (
     <div className="flex items-center flex-col justify-center min-h-screen bg-gray-900 ">
       <h1 className="text-white">Сургалтын хөтөлбөрүүд</h1>
-      <div className="flex w-[90vw] h-[70vh] gap-2">
+      <div className="flex flex-col w-[90vw] h-[70vh] md:flex-row  gap-2 ">
         {/* 1 */}
         <div
           className={`${baseClasses} ${
@@ -20,7 +21,7 @@ const SurgaltHotolbor = () => {
               : focusedIndex !== null
               ? "bg-gray-500 w-[10%] opacity-50"
               : "bg-gray-700 w-[14.28%]"
-          }`}
+          } md:w-auto `}
           onClick={() => setFocusedIndex(focusedIndex === 1 ? null : 1)}
         >
           <div
@@ -41,7 +42,7 @@ const SurgaltHotolbor = () => {
             >
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
-            <p>mobile hogjuulegch</p>
+            <p>Мобайл хөгжүүлэгч</p>
           </div>
 
           {focusedIndex === 1 && (
@@ -77,6 +78,7 @@ const SurgaltHotolbor = () => {
                 </p>
                 <ul className="flex flex-col gap-2">
                   <li className="text-sm text-gray-400 hover:text-indigo-300 transition-colors duration-300 cursor-pointer">
+                    <Check />
                     React-н JSX, props, state, components талаар суурь ойлголтыг
                     олж авах
                   </li>

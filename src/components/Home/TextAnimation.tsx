@@ -3,8 +3,8 @@ import { Yrsa } from "next/font/google";
 
 import { useEffect, useRef, useState } from "react";
 const yrsa = Yrsa({
-  subsets: ["latin"], // choose the subset you need
-  weight: ["300", "700"], // normal and bold
+  subsets: ["latin"],
+  weight: ["300", "700"],
 });
 
 const wordsData = [
@@ -95,7 +95,9 @@ const AnimatedWord = ({ word, delay }: AnimatedWordProps) => {
         isVisible
           ? "opacity-100 translate-y-0 blur-0"
           : "opacity-0 translate-y-5 blur-sm"
-      } text-sm md:text-[1.875rem] lg:text-5xl text-center ${yrsa.className}`}
+      } text-sm md:text-[1.875rem] lg:text-5xl text-center hover:text-fuchsia-700 duration-75 ease ${
+        yrsa.className
+      }`}
     >
       {word}
     </span>

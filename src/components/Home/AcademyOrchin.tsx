@@ -18,23 +18,20 @@ export default function OrchingiinZurag() {
     offset: ["start start", "end end"],
   });
 
-  // Zoom effect for grid during first half of scroll
   const gridScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.5]);
   const gridY = useTransform(scrollYProgress, [0, 0.5], ["0px", "-50px"]);
 
-  // Slide move effect during second half of scroll
   const slideY = useTransform(scrollYProgress, [0, 1], ["100%", "0%"]);
 
   return (
     <div ref={containerRef} className="relative h-[200vh] bg-gray-900">
-      {/* Grid Section */}
-      <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden  ">
-        <div className="scale-200 origin-center transition-all duration-500">
+      <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bottom-0 ">
+        <div className=" origin-center transition-all duration-500">
           <motion.div
             style={{ y: gridY, scale: gridScale }}
-            className="relative h-screen w-full bg-black text-white text-5xl font-bold flex items-center justify-center overflow-hidden"
+            className="relative  h-screen w-full bg-black text-white  flex items-center justify-center "
           >
-            <div className="grid grid-cols-3 grid-rows-3 gap-3 w-full h-full p-4">
+            <div className="w-[100vw] h-full grid grid-cols-3 grid-rows-3 gap-3  p-4 scale-200">
               <Image
                 className="rounded-3xl w-full h-full object-cover"
                 src={workShopRoom4}
@@ -87,7 +84,6 @@ export default function OrchingiinZurag() {
         </div>
       </div>
 
-      {/* Slide Section */}
       <section className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
         <motion.div
           style={{ y: slideY }}
