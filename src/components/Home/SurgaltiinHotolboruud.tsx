@@ -108,7 +108,6 @@ const SurgaltHotolbor = () => {
           )}
         </div>
 
-        {/* 2 */}
         <div
           className={`${baseClasses} ${
             focusedIndex === 2
@@ -307,7 +306,6 @@ const SurgaltHotolbor = () => {
           )}
         </div>
 
-        {/* 4 */}
         <div
           className={`${baseClasses} ${
             focusedIndex === 4
@@ -399,7 +397,6 @@ const SurgaltHotolbor = () => {
           )}
         </div>
 
-        {/* 5 */}
         <div
           className={`${baseClasses} ${
             focusedIndex === 5
@@ -522,7 +519,6 @@ const SurgaltHotolbor = () => {
           )}
         </div>
 
-        {/* 6 */}
         <div
           className={`${baseClasses} ${
             focusedIndex === 6
@@ -641,7 +637,6 @@ const SurgaltHotolbor = () => {
           )}
         </div>
 
-        {/* 7 */}
         <div
           className={`${baseClasses} ${
             focusedIndex === 7

@@ -18,10 +18,8 @@ const ModernSocialButton: React.FC<SocialButtonProps> = ({
       rel="noopener noreferrer"
       className="group relative flex items-center justify-between min-w-[140px] p-3 bg-gradient-to-r from-gray-800/90 to-gray-700/90 backdrop-blur-lg border border-gray-600/50 rounded-xl transition-all duration-500 ease-out hover:scale-95 hover:from-purple-600/80 hover:to-blue-600/80 hover:border-purple-400/70 hover:shadow-lg hover:shadow-purple-500/25 overflow-hidden"
     >
-      {/* Animated background gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-purple-600/0 via-blue-600/0 to-purple-600/0 group-hover:from-purple-600/20 group-hover:via-blue-600/20 group-hover:to-purple-600/20 transition-all duration-500"></div>
 
-      {/* Bottom line animation */}
       <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 w-0 group-hover:w-full transition-all duration-700 ease-out"></div>
 
       <div className="flex items-center gap-3 relative z-10">
@@ -33,7 +31,6 @@ const ModernSocialButton: React.FC<SocialButtonProps> = ({
         </span>
       </div>
 
-      {/* Arrow with enhanced animation */}
       <div className="relative z-10 text-gray-500 group-hover:text-white transition-all duration-400 group-hover:translate-x-2 group-hover:-rotate-45 group-hover:scale-110">
         <svg
           width="16"
@@ -125,7 +122,6 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-1 flex-col md:flex-row justify-between gap-12">
-          {/* Дугаар */}
           <div className="flex flex-col items-center md:items-start gap-4">
             <h3 className="text-xl font-semibold text-[#5629B6] flex items-center gap-2">
               <Home size={20} /> Дугаар
@@ -179,7 +175,6 @@ export default function Footer() {
       </div>
 
       <div className="mt-12 border-t border-[#393C40] pt-6 flex flex-col md:flex-row items-center justify-between px-4 md:px-0 max-w-6xl mx-auto gap-6">
-        {/* Modern Social Media Buttons */}
         <div className="flex flex-wrap gap-3 justify-center md:justify-start">
           {socialButtons.map((button, index) => (
             <ModernSocialButton key={index} {...button} />
