@@ -71,6 +71,7 @@ export default function Footer() {
     },
     {
       href: "https://www.youtube.com/@erxesAcademy",
+      
       label: "YouTube",
       icon: (
         <svg fill="currentColor" viewBox="0 0 24 24" className="w-full h-full">
