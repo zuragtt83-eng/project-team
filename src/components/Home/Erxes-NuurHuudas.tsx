@@ -2,33 +2,39 @@ import Header from "../Layout/Header";
 
 export default function ErxesNuurHuudas() {
   return (
-    <div className="w-full h-screen px-10 bg-amber-900">
-      <div className="flex relative flex-col ">
+    <div
+      className="w-full h-screen relative"
+      style={{
+        backgroundImage: `url("/images/erxesBack.png")`, // public/images доторх зураг
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      {/* Overlay - зураг дээр хар тунгалаг давхарга */}
+      <div className="absolute inset-0 bg-black/40"></div>
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-col h-full px-10">
         <Header />
-        <span className="text-9xl font-bold text-amber-500">Erxes</span>
-        <span className="text-9xl text-gray-700 mt-4">Academy</span>
-      </div>
-      <div className="flex justify-between items-center ">
-        <div className="flex justify-between flex-col ">
-          <div>
+
+        <div className="flex justify-between items-center pb-10">
+          <div className="flex flex-col space-y-4 text-white">
             <p>
               Өнөөдөр бид хийж буй хөрөнгө оруулалт бүр маргаашийн амжилт,{" "}
-              <br /> үнэ цэнтэй холбоотой. Бүх алхам, бүх шийдвэр бол ирээдүйн
+              <br />
+              үнэ цэнтэй холбоотой. Бүх алхам, бүх шийдвэр бол ирээдүйн
               өөрийнхөө <br /> төлөө хийж буй хөрөнгө юм.
             </p>
-          </div>
-          <div>
             <p>@{new Date().getFullYear()} Erxes Academy</p>
           </div>
-        </div>
-        <div>
-          <div>
+
+          <div className="flex flex-col space-y-2 text-white">
             <p>Мобайл хөгжүүлэгч</p>
             <p>UI/UX дизайнер</p>
             <p>Front-End хөгжүүлэгч</p>
             <p>Back-End хөгжүүлэгч</p>
           </div>
-          <div></div>
         </div>
       </div>
     </div>

@@ -78,7 +78,7 @@ export default function AboutBeg() {
         <AboutCom />
         <AboutTwo />
       </div>
+      <div>hjahj</div>
     </div>
   );
-  //atsa nehed bga
 }
