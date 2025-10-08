@@ -80,4 +80,5 @@ export default function AboutBeg() {
       </div>
     </div>
   );
+  //atsa nehed bga
 }
