@@ -80,5 +80,6 @@ export default function AboutBeg() {
       </div>
       <div>hjahj</div>
     </div>
+    //bolkuu bnuu sd
   );
 }
