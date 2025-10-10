@@ -153,6 +153,7 @@ export default function AboutBeg() {
         <ImageGallery/>
       </div>
 
+     
     </div>
   );
 }
