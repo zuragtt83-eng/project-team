@@ -5,13 +5,13 @@ export default function ErxesNuurHuudas() {
     <div
       className="w-full h-screen relative"
       style={{
-        backgroundImage: `url("/images/erxesBack.png")`, // public/images доторх зураг
+        backgroundImage: `url("/images/erxesBack.png")`, 
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
     >
-      {/* Overlay - зураг дээр хар тунгалаг давхарга */}
+  
       <div className="absolute inset-0 bg-black/40"></div>
 
       {/* Content */}
