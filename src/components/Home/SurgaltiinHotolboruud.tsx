@@ -12,7 +12,6 @@ const SurgaltHotolbor = () => {
       number: "01",
       title: "Мобайл хөгжүүлэгч",
       subtitle: "learning",
-      color: "bg-gradient-to-br from-orange-400 to-orange-500",
       content: {
         mainTitle: "Яагаад Мобайл хөгжүүлэгч гэж?",
         description:
@@ -32,7 +31,6 @@ const SurgaltHotolbor = () => {
       number: "02",
       title: "UI/UX дизайнер",
       subtitle: "architecture",
-      color: "bg-gradient-to-br from-gray-700 to-gray-800",
       content: {
         mainTitle: "Зөвхөн танай байгууллагын хэрэгцээнд тохирсон сонголт",
         description:
@@ -54,7 +52,6 @@ const SurgaltHotolbor = () => {
       number: "03",
       title: "Front-End хөгжүүлэгч",
       subtitle: "protection",
-      color: "bg-gradient-to-br from-gray-700 to-gray-800",
       content: {
         mainTitle: "Яагаад Front-End хөгжүүлэгч гэж?",
         description:
@@ -77,7 +74,6 @@ const SurgaltHotolbor = () => {
       number: "04",
       title: "Back-End хөгжүүлэгч",
       subtitle: "growth",
-      color: "bg-gradient-to-br from-gray-700 to-gray-800",
       content: {
         mainTitle: "Яагаад Back-End хөгжүүлэгч гэж?",
         description:
@@ -99,7 +95,6 @@ const SurgaltHotolbor = () => {
       number: "05",
       title: "GAP хөтөлбөр",
       subtitle: "discovery",
-      color: "bg-gradient-to-br from-gray-700 to-gray-800",
       content: {
         mainTitle: "Яагаад GAP хөтөлбөр гэж?",
         description:
@@ -120,7 +115,6 @@ const SurgaltHotolbor = () => {
       number: "06",
       title: "ICP хөтөлбөр",
       subtitle: "intensive",
-      color: "bg-gradient-to-br from-gray-700 to-gray-800",
       content: {
         mainTitle: "Яагаад ICP (Intensive College prep) хөтөлбөр гэж?",
         description:
@@ -141,7 +135,6 @@ const SurgaltHotolbor = () => {
       number: "07",
       title: "JCP хөтөлбөр",
       subtitle: "junior prep",
-      color: "bg-gradient-to-br from-gray-700 to-gray-800",
       content: {
         mainTitle: "Яагаад JCP (Junior College prep) хөтөлбөр гэж",
         description:
@@ -160,174 +153,73 @@ const SurgaltHotolbor = () => {
   ];
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-950 p-4">
-      <style>{`
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        @keyframes slideDown {
-          from { 
-            opacity: 0;
-            transform: translateY(-20px);
-          }
-          to { 
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        @keyframes slideUp {
-          from { 
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to { 
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        @keyframes slideInLeft {
-          from { 
-            opacity: 0;
-            transform: translateX(-20px);
-          }
-          to { 
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-        .animate-fadeIn {
-          animation: fadeIn 0.6s ease-out;
-        }
-        .animate-slideDown {
-          animation: slideDown 0.6s ease-out;
-        }
-        .animate-slideUp {
-          animation: slideUp 0.6s ease-out 0.2s both;
-        }
-      `}</style>
+    <div className="flex items-center justify-center min-h-screen bg-white p-4">
       <div className="w-full max-w-7xl">
-        <h1 className="text-white text-3xl font-bold mb-8 text-center">
+        <h1 className="text-gray-900 text-3xl font-light mb-12 text-center tracking-wide">
           Сургалтын хөтөлбөрүүд
         </h1>
 
-        <div className="flex flex-col md:flex-row gap-4 h-[600px]">
+        <div className="flex flex-col md:flex-row gap-3 h-[600px]">
           {programs.map((program) => (
             <div
               key={program.id}
               onClick={() => setFocusedIndex(program.id)}
               className={`
-                relative rounded-3xl cursor-pointer overflow-hidden
-                transition-all duration-1000 ease-out
+                relative border cursor-pointer overflow-hidden
+                transition-all duration-500
                 ${
                   focusedIndex === program.id
-                    ? `${program.color} md:flex-[4] flex-1 shadow-2xl scale-105 z-10`
-                    : `bg-gray-800 md:flex-[0.8] flex-1 opacity-70 hover:opacity-90 hover:bg-fuchsia-600 hover:scale-105`
+                    ? "bg-gray-900 md:flex-[4] flex-1 border-gray-900"
+                    : "bg-white md:flex-[0.8] flex-1 border-gray-200 hover:border-gray-400"
                 }
               `}
             >
               {/* Collapsed State */}
               {focusedIndex !== program.id && (
-                <div className="h-full flex flex-col items-center justify-between p-6 transition-all duration-700 ease-out">
-                  <div className="flex items-center justify-center w-full transform transition-transform duration-500 hover:rotate-180">
-                    <svg
-                      className="w-8 h-8 text-white rotate-45"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path d="m7 7 10 10M7 17 17 7" />
-                    </svg>
-                  </div>
-
-                  <div className="flex flex-col items-center gap-4 flex-1 justify-center transition-all duration-500">
-                    <span className="text-white text-6xl md:text-8xl font-bold opacity-20 transition-all duration-500">
+                <div className="h-full flex flex-col items-center justify-center p-6">
+                  <div className="flex flex-col items-center gap-4">
+                    <span className="text-gray-300 text-5xl md:text-6xl font-light">
                       {program.number}
                     </span>
-                    <h2 className="text-white text-lg md:text-xl font-semibold text-center whitespace-nowrap overflow-hidden text-ellipsis max-w-full px-2 transition-all duration-500">
+                    <h2 className="text-gray-900 text-base md:text-lg font-normal text-center">
                       {program.title}
                     </h2>
-                  </div>
-
-                  <div className="flex items-center gap-2 text-white opacity-60 transition-all duration-500">
-                    <svg
-                      className="w-5 h-5"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path d="M2 6c0-1.505.78-3.08 2.198-4.058C5.605.96 7.669.448 10 .448c2.33 0 4.394.512 5.802 1.494C17.22 2.92 18 4.495 18 6s-.78 3.08-2.198 4.058C14.394 11.04 12.33 11.552 10 11.552c-2.33 0-4.394-.512-5.802-1.494C2.78 9.08 2 7.505 2 6z" />
-                      <path d="M2 12c0-1.505.78-3.08 2.198-4.058C5.605 6.96 7.669 6.448 10 6.448c2.33 0 4.394.512 5.802 1.494C17.22 8.92 18 10.495 18 12s-.78 3.08-2.198 4.058C14.394 17.04 12.33 17.552 10 17.552c-2.33 0-4.394-.512-5.802-1.494C2.78 15.08 2 13.505 2 12z" />
-                    </svg>
-                    <span className="text-sm">{program.subtitle}</span>
                   </div>
                 </div>
               )}
 
               {/* Expanded State */}
               {focusedIndex === program.id && (
-                <div className="h-full w-full p-8 overflow-y-auto animate-fadeIn">
-                  <div className="flex items-start justify-between mb-6 animate-slideDown">
-                    <div>
-                      <div className="flex items-center gap-3 mb-2">
-                        <svg
-                          className="w-6 h-6 text-white transform transition-transform duration-500 rotate-45"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        >
-                          <path d="m7 7 10 10M7 17 17 7" />
-                        </svg>
-                        <span className="text-white text-5xl font-bold">
-                          {program.number}
-                        </span>
-                      </div>
-                      <h2 className="text-white text-2xl font-bold mb-2">
-                        {program.title}
-                      </h2>
-                    </div>
+                <div className="h-full w-full p-8 overflow-y-auto">
+                  <div className="mb-8">
+                    <span className="text-white text-4xl font-light block mb-4">
+                      {program.number}
+                    </span>
+                    <h2 className="text-white text-2xl font-light mb-2">
+                      {program.title}
+                    </h2>
                   </div>
 
-                  <div className="space-y-4 text-white animate-slideUp">
-                    <h3 className="text-xl font-bold">
+                  <div className="space-y-6 text-white">
+                    <h3 className="text-lg font-normal">
                       {program.content.mainTitle}
                     </h3>
 
                     {program.content.description && (
-                      <p className="text-sm text-white/80 leading-relaxed">
+                      <p className="text-sm text-white/70 leading-relaxed font-light">
                         {program.content.description}
                       </p>
                     )}
 
-                    <div className="mt-6">
-                      <h4 className="font-semibold mb-3 flex items-center gap-2">
-                        <svg
-                          className="w-5 h-5"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        >
-                          <path d="M2 6c0-1.505.78-3.08 2.198-4.058C5.605.96 7.669.448 10 .448c2.33 0 4.394.512 5.802 1.494C17.22 2.92 18 4.495 18 6s-.78 3.08-2.198 4.058C14.394 11.04 12.33 11.552 10 11.552c-2.33 0-4.394-.512-5.802-1.494C2.78 9.08 2 7.505 2 6z" />
-                        </svg>
-                        {program.subtitle}
-                      </h4>
-                      <ul className="space-y-2">
+                    <div className="mt-8">
+                      <ul className="space-y-3">
                         {program.content.features.map((feature, idx) => (
                           <li
                             key={idx}
-                            className="flex items-start gap-2 text-sm text-white/70 hover:text-white transition-all duration-300 hover:translate-x-2"
-                            style={{
-                              animation: `slideInLeft 0.5s ease-out ${
-                                idx * 0.1
-                              }s both`,
-                            }}
+                            className="flex items-start gap-3 text-sm text-white/60"
                           >
-                            <Check className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                            <span className="break-words">{feature}</span>
+                            <span className="text-white/40 mt-0.5">—</span>
+                            <span className="font-light">{feature}</span>
                           </li>
                         ))}
                       </ul>

@@ -1,9 +1,6 @@
 "use client";
-
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { useThemeContext } from "@/components/context/ThemeLanguage";
-import Image from "next/image";
-
 import Link from "next/link";
 import { useState, useEffect } from "react";
 

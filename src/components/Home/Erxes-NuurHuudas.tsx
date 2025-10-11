@@ -1,40 +1,73 @@
+"use client";
+import { useState, useEffect } from "react";
+import { Code2 } from "lucide-react";
 import Header from "../Layout/Header";
 
-export default function ErxesNuurHuudas() {
+export default function HeroSection() {
+  const [showIntro, setShowIntro] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowIntro(false);
+      setTimeout(() => setIsVisible(true), 200);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div
-      className="w-full h-screen relative"
-      style={{
-        backgroundImage: `url("/images/erxesBack.png")`, 
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-  
-      <div className="absolute inset-0 bg-black/40"></div>
+    <div className="relative bg-black text-white">
+      {/* Intro transition screen */}
+      <div
+        className={`fixed inset-0 z-50 flex items-center justify-center bg-black transition-transform duration-700 ${
+          showIntro ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
+        <div className="text-center">
+          <Code2 className="w-16 h-16 mx-auto text-gray-400 mb-6 animate-pulse" />
+          <h1 className="text-5xl sm:text-6xl font-bold">erxes Academy</h1>
+          <p className="text-gray-400 mt-2 text-lg">
+            Харьяа компани — erxes inc
+          </p>
+        </div>
+      </div>
 
-      {/* Content */}
-      <div className="relative z-10 flex flex-col h-full px-10">
-        <Header />
+      {/* Header */}
+      <Header />
 
-        <div className="flex justify-between items-center pb-10">
-          <div className="flex flex-col space-y-4 text-white">
-            <p>
-              Өнөөдөр бид хийж буй хөрөнгө оруулалт бүр маргаашийн амжилт,{" "}
-              <br />
-              үнэ цэнтэй холбоотой. Бүх алхам, бүх шийдвэр бол ирээдүйн
-              өөрийнхөө <br /> төлөө хийж буй хөрөнгө юм.
-            </p>
-            <p>@{new Date().getFullYear()} Erxes Academy</p>
-          </div>
+      {/* Hero Content */}
+      <div
+        className="min-h-screen flex flex-col justify-center items-center px-6 text-center"
+        style={{
+          backgroundImage: `url("/images/erxesBack.png")`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div
+          className={`max-w-4xl mx-auto transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          {/* Title */}
+          <h1 className="text-4xl sm:text-6xl font-bold leading-tight mb-6">
+            Master Code. <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
+              Transform Your Future.
+            </span>
+          </h1>
 
-          <div className="flex flex-col space-y-2 text-white">
-            <p>Мобайл хөгжүүлэгч</p>
-            <p>UI/UX дизайнер</p>
-            <p>Front-End хөгжүүлэгч</p>
-            <p>Back-End хөгжүүлэгч</p>
-          </div>
+          {/* Subtitle */}
+          <p className="text-gray-300 text-lg sm:text-xl leading-relaxed mb-10">
+            Learn coding from industry professionals and become a modern
+            developer with real-world skills.
+          </p>
+
+          {/* Button */}
+          <button className="px-6 py-3 bg-white text-black rounded-full font-semibold hover:bg-gray-200 transition">
+            Explore Courses →
+          </button>
         </div>
       </div>
     </div>
